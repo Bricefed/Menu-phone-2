@@ -1,0 +1,22 @@
+{
+  "name": "menu-phone2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bricefed/Menu-phone-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bricefed/Menu-phone-2/issues"
+  },
+  "homepage": "https://github.com/Bricefed/Menu-phone-2#readme",
+  "dependencies": {
+    "sass": "^1.54.9"
+  }
+}
