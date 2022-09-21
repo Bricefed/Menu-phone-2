@@ -10,6 +10,11 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  min-height: 100vh;
+  background: #222327;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -45,6 +50,108 @@ button {
 
 p {
   font-size: 1.6rem;
+}
+
+nav ul li a, nav, body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul .indicator::after, nav ul .indicator::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border-radius: 50%;
+}
+
+nav {
+  position: relative;
+  width: 400px;
+  height: 60px;
+  background: white;
+  border-radius: 10px;
+}
+nav ul {
+  display: flex;
+  width: 350px;
+}
+nav ul li {
+  position: relative;
+  width: 70px;
+  height: 60px;
+  z-index: 2;
+}
+nav ul li.active a .icon {
+  transform: translateY(-33px);
+  color: #306fdd;
+}
+nav ul li.active a .text {
+  transform: translateY(-4px);
+  opacity: 1;
+}
+nav ul li:nth-child(1).active ~ .indicator {
+  transform: translateX(0px);
+}
+nav ul li:nth-child(2).active ~ .indicator {
+  transform: translateX(70px);
+}
+nav ul li:nth-child(3).active ~ .indicator {
+  transform: translateX(140px);
+}
+nav ul li:nth-child(4).active ~ .indicator {
+  transform: translateX(210px);
+}
+nav ul li:nth-child(5).active ~ .indicator {
+  transform: translateX(280px);
+}
+nav ul li a {
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+nav ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 65px;
+  font-size: 3rem;
+  transition: 0.5s;
+  color: #222327;
+}
+nav ul li a .text {
+  position: absolute;
+  background: #306fdd;
+  color: white;
+  padding: 2px 7px;
+  border-radius: 12px;
+  font-weight: 400;
+  font-size: 1.2rem;
+  letter-spacing: 0.05rem;
+  transition: 0.5s;
+  opacity: 0;
+}
+nav ul .indicator {
+  position: absolute;
+  top: -35px;
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 50%;
+  z-index: 1;
+  transition: 0.5s;
+}
+nav ul .indicator::before {
+  left: -28px;
+  box-shadow: 15px 18px white;
+}
+nav ul .indicator::after {
+  right: -28px;
+  box-shadow: -15px 18px white;
 }
 
 /*# sourceMappingURL=styles.css.map */

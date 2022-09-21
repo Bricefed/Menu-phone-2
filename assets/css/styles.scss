@@ -1,3 +1,95 @@
+@import "./variables";
 @import "./reset";
+@import "./placeholder";
 
+nav {
+  position: relative;
+  @extend %displayCenterCenter;
+  width: 400px;
+  height: 60px;
+  background: white;
+  border-radius: 10px;
 
+  ul {
+    display: flex;
+    width: 350px;
+
+    li {
+      position: relative;
+      width: 70px;
+      height: 60px;
+      z-index: 2;
+
+      &.active a {
+        .icon {
+          transform: translateY(-33px);
+          color: $blue;
+        }
+
+        .text {
+          transform: translateY(-4px);
+          opacity: 1;
+        }
+      }
+
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}).active ~ .indicator {
+          transform: translateX(70px * $i - 70);
+        }
+      }
+
+      a {
+        position: relative;
+        @extend %displayCenterCenter;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        font-weight: 500;
+
+        .icon {
+          position: relative;
+          display: block;
+          line-height: 65px;
+          font-size: 3rem;
+          transition: .5s;
+          color: $black;
+        }
+
+        .text {
+          position: absolute;
+          background: $blue;
+          color: white;
+          padding: 2px 7px;
+          border-radius: 12px;
+          font-weight: 400;
+          font-size: 1.2rem;
+          letter-spacing: .05rem;
+          transition: .5s;
+          opacity: 0;
+        }
+      }
+    }
+    .indicator {
+      position: absolute;
+      top: -35px;
+      width: 70px;
+      height: 70px;
+      background: white;
+      border-radius: 50%;
+      z-index: 1;
+      transition: .5s;
+
+      &::before {
+        @extend %beforeAfterEl;
+        left: -28px;
+        box-shadow: 15px 18px white;
+      }
+
+      &::after {
+        @extend %beforeAfterEl;
+        right: -28px;
+        box-shadow: -15px 18px white;
+      }
+    }
+  }
+}
